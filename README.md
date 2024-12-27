@@ -24,9 +24,9 @@ Once the project is created, navigate to its folder:
 
 
 
-#Installation and Configuration of @rnmapbox/maps
+# Installation and Configuration of @rnmapbox/maps
 
-##Configure credentials
+## Configure credentials
 Before installing @rnmapbox/maps you'll need to get the proper credentials. You'll need two tokens:
 
 	Secret access token with (Downloads:Read) scope to download iOS and Android SDK from mapbox. The secret token starts with sk.ey
@@ -35,7 +35,7 @@ See Configure Credential on mapbox.com for details.
 
 	expo install @rnmapbox/maps
 
-##Configure @rnmapbox/maps
+## Configure @rnmapbox/maps
 
 Set RNMapboxMapsDownloadToken to your secret token. See the credentials instructions on mapbox.com.
 
@@ -56,7 +56,7 @@ Add RNMapboxMapsDownloadToken to the @rnmapbox/maps config plugin in the plugins
 	  }
 	}
 
-##Rebuild
+## Rebuild
 
 React Native Mapbox Maps cannot be used in the "Expo Go" app, because it requires custom native code.
 
@@ -67,12 +67,12 @@ Next, if you are not using EAS Build then you must rebuild your app as described
 &nbsp;
 &nbsp;
 
-#Adding Custom Native Code to Your Expo Project Using EAS (Step-by-Step)
+# Adding Custom Native Code to Your Expo Project Using EAS (Step-by-Step)
 This section details how to add custom native code to your Expo project using EAS and run your app with a development build.
 
 
 
-##Development Environment:
+## Development Environment:
 
 	Android Studio installed and configured for Android builds.
 	Node.js installed.
