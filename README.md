@@ -23,6 +23,32 @@ Once the project is created, navigate to its folder:
 
 
 
+#Connecting to your Development Server
+
+
+##Physical Android & iOS devices
+
+On your physical device, Download the Expo app by Expo Project from either Google Play or Apple App Store.
+2. Once installed, you will need to Sign Up for an expo.dev account.
+
+3. After you are signed in, open your Camera App and scan the QR code from your Expo CLI Terminal (from running npx expo start). It will ask to “Open in Expo Go”
+
+
+##Android Emulator
+
+1. Download and install Android Studio on your Mac or Windows. We will use this for our Android emulator.
+2. Configure Environmental Variables to tell Expo where to your Android SDK is. To find the path, open your Android Studio Settings > Languages & Frameworks > Android SDK > Android ADK Location. Copy this path for the next step.
+3. If you are on macOS, add the path pointing to your SDK location into the ~/.bash_profile: export ANDROID_HOME=/your/AndroidSDK/PATH
+4. If you are on Windows, go into Windows Control Panel > User Accounts (x2) > Change my environment variables and add:
+5. Variable Name: ANDROID_HOME
+6. Variable Value: /your/AndroidSDK/PATH
+7. Lastly, we need to setup our device to emulate. In Android Studio, click more Actions > Virtual Device Manager > Create Virual Device. Here we can select the Android hardware and OS version to use. I went with the Pixel 8 on Android 14.0 UpsideDownCake.
+8. Now back in our Expo CLI Terminal, you should see some options under the QR Code. Press “a” to open Android and it should automatically spin up your Android Emulator running your new App! Will take a few mins to setup android for the first time.
+
+
+&nbsp;  
+&nbsp;  
+
 
 # Installation and Configuration of @rnmapbox/maps
 
