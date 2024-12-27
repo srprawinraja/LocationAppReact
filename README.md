@@ -64,8 +64,12 @@ Next, if you are not using EAS Build then you must rebuild your app as described
 
 	expo prebuild --clean
 
-&nbsp;
-&nbsp;
+
+&nbsp;  
+&nbsp;  
+
+
+
 
 # Adding Custom Native Code to Your Expo Project Using EAS (Step-by-Step)
 This section details how to add custom native code to your Expo project using EAS and run your app with a development build.
