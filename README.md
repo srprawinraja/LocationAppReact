@@ -23,10 +23,10 @@ Once the project is created, navigate to its folder:
 
 
 
-#Connecting to your Development Server
+# Connecting to your Development Server
 
 
-##Physical Android & iOS devices
+## Physical Android & iOS devices
 
 On your physical device, Download the Expo app by Expo Project from either Google Play or Apple App Store.
 2. Once installed, you will need to Sign Up for an expo.dev account.
@@ -34,7 +34,7 @@ On your physical device, Download the Expo app by Expo Project from either Googl
 3. After you are signed in, open your Camera App and scan the QR code from your Expo CLI Terminal (from running npx expo start). It will ask to “Open in Expo Go”
 
 
-##Android Emulator
+## Android Emulator
 
 1. Download and install Android Studio on your Mac or Windows. We will use this for our Android emulator.
 2. Configure Environmental Variables to tell Expo where to your Android SDK is. To find the path, open your Android Studio Settings > Languages & Frameworks > Android SDK > Android ADK Location. Copy this path for the next step.
