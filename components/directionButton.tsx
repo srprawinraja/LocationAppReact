@@ -1,7 +1,8 @@
 import React from 'react';
 import { TouchableOpacity, Image, StyleSheet, Alert } from 'react-native';
-import pin from '~/assets/pin.png';
-import { PermissionsAndroid, ToastAndroid } from 'react-native';
+
+
+
 
 const directionButton = ({ onPress }: { onPress: () => void }) => {
     return (
@@ -23,7 +24,6 @@ const styles = StyleSheet.create({
           right:40,
           top:10,
           alignSelf:'flex-end', // Centers the button horizontally
-
         },
         icon: {
           width: 60, // Adjust icon size

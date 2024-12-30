@@ -28,6 +28,7 @@
       "supportsTablet": true
     },
     "android": {
+
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
@@ -46,7 +47,10 @@
       [
         "expo-location",
         {
-          "locationWhenInUsePermission": "Show current location on map."
+
+          "locationAlwaysAndWhenInUsePermission": "Allow this app to use your location."
+
+        
         }
       ]
     ],

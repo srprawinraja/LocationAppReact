@@ -6,8 +6,8 @@ import React from "react";
 import { ScreenContent } from '~/components/ScreenContent';
 import Map from '~/components/Map'
 import RoundButton from '~/components/roundButton'
-import { PermissionsAndroid, ToastAndroid } from 'react-native';
-
+import { PermissionsAndroid, StatusBar, ToastAndroid } from 'react-native';
+import {isAllPermissionGiven, isNeverAskAgain} from '~/app/permission'
 
 export default function Home() {
   
@@ -19,28 +19,20 @@ export default function Home() {
 
       <RoundButton onPress={
                 async ()=>{
-                  const Permission = [PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,PermissionsAndroid.PERMISSIONS.ACCESS_COARSE_LOCATION, 
-                  ]
+                  const Permission = [PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,PermissionsAndroid.PERMISSIONS.ACCESS_COARSE_LOCATION]
                   try{
-                    const granted = await PermissionsAndroid.requestMultiple(
-                      Permission,
-                    );
-                    if (
-                      granted[PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION] === PermissionsAndroid.RESULTS.GRANTED &&
-                      granted[PermissionsAndroid.PERMISSIONS.ACCESS_COARSE_LOCATION] === PermissionsAndroid.RESULTS.GRANTED
-                    ) {
-                      ToastAndroid.show("fetching current location", ToastAndroid.LONG)
-                    } else if(
-                      granted[PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION] === PermissionsAndroid.RESULTS.NEVER_ASK_AGAIN ||
-                      granted[PermissionsAndroid.PERMISSIONS.ACCESS_COARSE_LOCATION] === PermissionsAndroid.RESULTS.NEVER_ASK_AGAIN
-                    ) {
-                      ToastAndroid.show("enable location permission", ToastAndroid.LONG)
+                    const granted = await PermissionsAndroid.requestMultiple(Permission)
+                    if(isAllPermissionGiven(granted)){
+                        ToastAndroid.show("fetching the current location", ToastAndroid.LONG)
                     } else {
-                      ToastAndroid.show("enable location permission in setting", ToastAndroid.LONG)
-              
+                      if(isNeverAskAgain(granted)){
+                        ToastAndroid.show("Cannot fetch location. Please enable permission in settings", ToastAndroid.LONG)
+                      } else {
+                        ToastAndroid.show("Cannot fetch location. Please enable permission", ToastAndroid.LONG)
+                      }
                     }
-                  } catch{
-              
+                  } catch(event){
+                      ToastAndroid.show("Error when asking Permisison", ToastAndroid.LONG)
                   }
               }
               }/>
