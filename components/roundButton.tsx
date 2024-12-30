@@ -1,7 +1,5 @@
 import React from 'react';
 import { TouchableOpacity, Image, StyleSheet, Alert } from 'react-native';
-import pin from '~/assets/pin.png';
-import { PermissionsAndroid, ToastAndroid } from 'react-native';
 
 const RoundButton = ({ onPress }: { onPress: () => void }) => {
     return (
@@ -33,10 +31,14 @@ const styles = StyleSheet.create({
         },
         icon: {
             
-          width: 40, // Adjust icon size
-          height: 40,
+          width: 50, // Adjust icon size
+          height: 50,
           resizeMode: 'contain', // Keep the aspect ratio of the icon
         },
+
+        pinIcon:{
+          
+        }
 });
 
 export default RoundButton;
